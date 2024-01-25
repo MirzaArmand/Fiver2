@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="admin-style.css" />
+    <style>
+  
+
+      .sidebar {
+margin: 0;
+padding: 0;
+top: 0;
+width: 200px;
+background-color: rgb(10, 12, 72);
+position: fixed;
+height: 100%;
+overflow: auto;
+color: white;
+}
+
+.sidebar a {
+display: block;
+color: white;
+padding: 16px;
+text-decoration: none;
+}
+
+.sidebar a.active {
+background-color: blue;
+color: white;
+}
+
+.sidebar a:hover:not(.active) {
+background-color: #6495ED;
+color: white;
+}
+
+  </style>
+
+
+
+
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+   
+      <div class="sidebar">
+      <div class="logo" style="display: flex; align-items: center;">
+        <img src="http://localhost/FoodGuard/img/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+        <h2 style="color: white; margin-left: 10px;">FoodGuard</h2>
+      </div>
+      <a href="http://localhost/FoodGuard/admin_home.php">Home</a>
+      <a href="http://localhost/maps/map_admin.php">Restaurant Locator</a>
+      <a href="http://localhost/FoodGuard/admin_list.php"> List of Cafes and Restaurants</a>
+      <a href="http://localhost/maps/create.php">Add Restaurant</a>
+      <a class="active" href="http://localhost/Review/Review/admin.html">Delete Review</a>
+      <a href="http://localhost/FoodGuard/admin_timeline.php">Delete Timeline</a>
+      <a href="http://localhost/FoodGuard/admin_dashboard.php">Dashboard</a>
+      <a href="http://localhost/FoodGuard/home.php">Logout</a>
+      </div>
+    <div class="admin-container">
+      <h1>Admin Dashboard</h1>
+     <div id="adminReviewsList"></div>
+     </div>
+    <script src="admin-script.js"></script>
+  </body>
+</html>

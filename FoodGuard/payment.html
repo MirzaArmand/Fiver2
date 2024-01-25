@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="payment.css" />
+    <title>FoodGuard</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>FoodGuard</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+    <div class="content">
+      <h1>Make a Payment for Advertisement</h1>
+      <form
+        id="paymentForm"
+        action="process_payment.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="image">Choose an image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+        <button id="submitImage" type="button">Submit Advertisement</button>
+       
+      </form>
+      <button id="rzp-button1">Pay</button>
+    </div>
+    <script >
+      document.getElementById("submitImage").onclick = function () {
+        // Trigger form submission when the "Submit to Dataset" button is clicked
+        document.getElementById("paymentForm").submit();
+      };
+
+      document.getElementById("rzp-button1").onclick = function (e) {
+        var options = {
+          key: "rzp_test_hcLe2voIcRD6SA",
+          amount: "1000",
+          currency: "MYR",
+          name: "FoodGuard",
+          description: "Make your payment",
+          image: "http://localhost/FoodGuard/img/logo.png",
+          order_id: "order_NPO8LANWvgOihe",
+          handler: function (response) {
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature);
+          },
+          
+          notes: {
+            address: "Razorpay Corporate Office",
+          },
+          theme: {
+            color: "#3399cc",
+          },
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.on("payment.failed", function (response) {
+          alert(response.error.code);
+          alert(response.error.description);
+          alert(response.error.source);
+          alert(response.error.step);
+          alert(response.error.reason);
+          alert(response.error.metadata.order_id);
+          alert(response.error.metadata.payment_id);
+        });
+        document.getElementById("rzp-button1").onclick = function (e) {
+          rzp1.open();
+          e.preventDefault();
+        };
+      };
+    </script>
+  </body>
+</html>

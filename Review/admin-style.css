@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-image: url("resto3.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #8e854e;
+}
+
+h1 {
+    color: #15181b;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-table th, .review-table td {
+    border: 1px solid #3f4621;
+    padding: 12px;
+    text-align: left;
+}
+
+.review-table th {
+    background-color: #7b954f;
+    color: #14151d;
+}
+
+.review-table td {
+    background-color: #fff;
+}
+
+button {
+    background-color: #dc3545;
+    color: #070505;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+

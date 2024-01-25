@@ -1,0 +1,74 @@
+ /* Set background color of body to white */ body { background-color: black; }
+
+/* Define CSS class for header */ .header { font-family: Arial, sans-serif; color: #444; background-color: #F8F8F8; padding: 20px; text-align: center; font-size: 28px; }
+
+/* Define CSS class for title */ .title { font-family: Arial, sans-serif; color: #444; background-color: #F8F8F8; padding: 20px; text-align: center; font-size: 24px; }
+
+/* Define CSS class for navigation */ 
+/* a:link, a:visited {
+    background-color: #1A63FF;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;}
+
+
+a:hover, a:active {
+  background-color: blue;
+} */
+
+/* Define CSS class for main content */ .main { font-family: Arial, sans-serif; color: white; padding: 20px; margin: 20px; background-color: #F8F8F8; text-align: center; font-size: 16px; }
+
+/* Define CSS class for footer */ .footer { font-family: Arial, sans-serif; color: #444; background-color: #F8F8F8; padding: 20px; text-align: center; font-size: 14px; }
+    p {color:white}
+
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+     
+    .sidebar a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+    
+    div.content {
+      margin-left: 200px;
+      padding: 1px 16px;
+      height: 1000px;
+    }
+    
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+    
+    @media screen and (max-width: 400px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
+    }

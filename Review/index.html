@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Restaurant Reviews</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo" style="display: flex; align-items: center;">
+        <img src="http://localhost/FoodGuard/img/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+        <h2 style="color: white; margin-left: 10px;">FoodGuard</h2>
+      </div>
+      <a href="http://localhost/FoodGuard/foodguard.php">Home</a>
+      <a class="active" href="#review">Review Form</a>
+      <a href="http://localhost/maps/map.php">Restaurant Locator</a>
+      <a href="http://localhost/FoodGuard/dashboard.php">Dashboard</a>
+      <a href="http://localhost/FoodGuard/home.php">Logout</a>
+    </div>
+    
+    </div>
+    <div class="container">
+      <h1>Please State Your Review</h1>
+      <form id="reviewForm">
+        <label for="restaurantName">Restaurant Name:</label>
+        <select id="restaurantName" name="restaurantName" required>
+          <option value="" disabled selected>Select a restaurant</option>
+          <option value="Restaurant1">Tok Janggut</option>
+          <option value="Restaurant2">Lemon Tree</option>
+          <option value="Restaurant3">Ar Rayyan</option>
+          <option value="Restaurant4">Pak Atong</option>
+          <option value="Restaurant5">Richiamo</option>
+          <option value="Restaurant6">Restu Anak</option>
+          <option value="Restaurant7">Bangkok Terminal</option>
+          <option value="Restaurant8">PEZZO</option>
+          <option value="Restaurant9">Warisan</option>
+        </select>
+
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" name="userName" required />
+
+        <!-- Replace the existing rating input with radio buttons -->
+        <label for="rating">Rating:</label>
+        <div id="ratingOptions">
+          <input type="radio" id="rating1" name="rating" value="1" required />
+          <label for="rating1">1</label>
+
+          <input type="radio" id="rating2" name="rating" value="2" />
+          <label for="rating2">2</label>
+
+          <input type="radio" id="rating3" name="rating" value="3" />
+          <label for="rating3">3</label>
+
+          <input type="radio" id="rating4" name="rating" value="4" />
+          <label for="rating4">4</label>
+
+          <input type="radio" id="rating5" name="rating" value="5" />
+          <label for="rating5">5</label>
+        </div>
+
+        <label for="reviewText">Review:</label>
+        <textarea id="reviewText" name="reviewText" required></textarea>
+
+        <button type="button" onclick="submitReview()">
+          <i class="fas fa-paper-plane"></i> Submit Review
+        </button>
+      </form>
+
+      <div id="reviewsList"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
